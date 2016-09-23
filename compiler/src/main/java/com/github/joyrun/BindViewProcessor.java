@@ -73,27 +73,27 @@ public class BindViewProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
 
-        LinkedHashMap<TypeElement, List<FieldViewBinding>> targetClassMap = new LinkedHashMap<>();
-        for (Element element : roundEnv.getElementsAnnotatedWith(BindView.class)){
-            if(!SuperficialValidation.validateElement(element))
-                continue;
-
-            TypeElement enclosingElement = (TypeElement) element.getEnclosingElement();
-
-            boolean hasError = isInaccessibleViaGeneratedCode(BindView.class,"fields",element) || isBindingInWrongPackage(BindView.class,element);
-
-            TypeMirror elementType = element.asType();
-
-            if(elementType.getKind() == TypeKind.TYPEVAR){
-                TypeVariable typeVariable = (TypeVariable)elementType;
-
-                elementType = typeVariable.getUpperBound();
-            }
-
-            if(!isSubtypeO)
-
-        }
-
+//        LinkedHashMap<TypeElement, List<FieldViewBinding>> targetClassMap = new LinkedHashMap<>();
+//        for (Element element : roundEnv.getElementsAnnotatedWith(BindView.class)){
+//            if(!SuperficialValidation.validateElement(element))
+//                continue;
+//
+//            TypeElement enclosingElement = (TypeElement) element.getEnclosingElement();
+//
+//            boolean hasError = isInaccessibleViaGeneratedCode(BindView.class,"fields",element) || isBindingInWrongPackage(BindView.class,element);
+//
+//            TypeMirror elementType = element.asType();
+//
+//            if(elementType.getKind() == TypeKind.TYPEVAR){
+//                TypeVariable typeVariable = (TypeVariable)elementType;
+//
+//                elementType = typeVariable.getUpperBound();
+//            }
+//
+////            if(!isSubtypeO)
+//
+//        }
+//
         return false;
     }
 
